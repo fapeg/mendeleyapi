@@ -10,13 +10,11 @@ mendeley = create_client()
 
 # aufgabe 1: Wie verteilen sich die in Mendeley abgelegten Publikationen auf die letzten 10 Jahre?
 # (Dafür müssen nicht alle Publikationen heruntergeladen werden!)
-# hier ist vermutlich die api-kategorie "papers" gemeint. "publications" gibt einem zeitschriften zurück
-# muss noch verbessert werden:
-# man bekommt ein dicitionary mit publikationsnamen und jahreszahl zurück (brauchen wir)
-# aber bisher nur für die top-publikationen, das sind 20 oder so
-response = mendeley.paper_stats()
 print "Papers:\n\n"
-pprint (response)
+for jahr in range(2003,2013): # letzte zehn jahre: von 2003 bis 2012 (trotzdem in range 2013 angeben)
+    response = mendeley.search('year:'+str(jahr))
+    print str(jahr) + ":"
+    print "    "+str(response['total_results'])+" Publikationen"
 print "\n ---------------------- \n"
 
 
