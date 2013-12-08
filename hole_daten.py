@@ -5,16 +5,23 @@ from pprint import pprint
 from mendeley_client import *
 import os, sys, json
 
+
 mendeley = create_client()
+
 
 
 # aufgabe 1: Wie verteilen sich die in Mendeley abgelegten Publikationen auf die letzten 10 Jahre?
 # (Dafür müssen nicht alle Publikationen heruntergeladen werden!)
 print "Papers:\n"
+publikationen10 = {}
 for jahr in range(2003,2013): # letzte zehn jahre: von 2003 bis 2012 (trotzdem in range 2013 angeben)
     response = mendeley.search('year:'+str(jahr))
     print str(jahr) + ":"
     print "    "+str(response['total_results'])+" Publikationen"
+    publikationen10[jahr]=response['total_results']
+#in json datei speichern
+with open("aufgabe1.json", "w") as json_output:
+    json.dump(publikationen10, json_output)
 print "\n ---------------------- \n"
 
 
@@ -22,8 +29,12 @@ print "\n ---------------------- \n"
 # hole die top 20 tags aus der kategorie "computer and information science"
 response = mendeley.tag_stats(6) # 6 ist die kategorie-id
 print "Top 20 Tags in Kategorie 'Computer and information science'\n"
+top20 = {}
 for tag in response:
+    top20[tag['name']]=tag['count']
     print tag['name'] +": "+ str(tag['count']) + " mal"
+with open("aufgabe2.json", "w") as json_output:
+    json.dump(top20, json_output)
 print "\n ---------------------- \n"
 
 
@@ -33,20 +44,41 @@ print "\n ---------------------- \n"
 # wir könnten über search danach suchen, haben dann aber kein ranking nach popularität
 response = mendeley.search('published_in:Nature', items=100)
 print "Top 10 Publikationen in Zeitschrift 'Nature'\n"
-# pprint(response)
+#pprint(response)
 print "anfrage muss noch verbessert werden"
 print "\n ---------------------- \n"
 
 
 # aufgabe 4: Auflistung aller Publikationen von Prof. Wolfgang G. Stock
 # (Extrahiere diese Daten automatisch mit Hilfe von Python!)
+#      -Erstelle ein Diagramm der Publikationsanzahl über die vorhandenen Jahre
+#      -Erstelle ein Ranking aller Co-Autoren mit denen Prof. Stock
+#       zusammengearbeitet hat nach Anzahl der in Mendeley vorhandenen,
+#       gemeinsamen Publikationen.
 response = mendeley.authored('"Wolfgang G Stock"', items=500)
 print "Publikationen von Stock\n"
+pub_jahre = {}
+coAutoren = {}
 for publikation in response['documents']:
+    # Aufgabenteil a
     print str(publikation['year']) + ": " + publikation['title']
+    if publikation['year'] in pub_jahre:
+        pub_jahre[publikation['year']]+=1
+    else:
+        pub_jahre[publikation['year']]=1   
+    with open("aufgabe4a.json", "w") as json_output:
+        json.dump(pub_jahre, json_output)
+    #Aufgabenteil b
     print "    Autoren:"
     for autor in publikation['authors']:
         print "            " + autor['forename'] + " " + autor['surname']
+        if autor['forename']!="Wolfgang G." and autor['surname']!="Stock":
+            if autor['surname'] in coAutoren:
+                coAutoren[autor['surname']]+=1
+            else:
+                coAutoren[autor['surname']]=1
+    with open("aufgabe4b.json", "w") as json_output:
+        json.dump(coAutoren, json_output)
     print "\n"
 print "\n ---------------------- \n"
 
@@ -60,5 +92,4 @@ for eintrag in cat_response: # jede kategorie durchgehen
     print eintrag['name'] + " (ID " + str(eintrag['id']) + "): "
     print "    "+ str(response['total_results']) + " Ergebnisse\n" 
 print "\n ---------------------- \n"
-
 
