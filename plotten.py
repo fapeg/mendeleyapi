@@ -48,3 +48,8 @@ plot_balken(pub_jahre, 'Publikationsanzahl nach Jahren von Wolfgang G Stock', 'J
 with open("aufgabe4b.json", "r") as json_input:
     coAutoren = json.load(json_input)
 plot_balken(coAutoren, 'Co-Autoren von Wolfgang G Stock', 'Co-Autor', 'Anzahl gemeinsamer Publikationen')
+
+# Aufgabe 5
+with open("aufgabe5.json", "r") as json_input:
+    ontology_anzahl = json.load(json_input)
+plot_balken(ontology_anzahl, 'Tag "ontology" in den verschiedenen Kategorien', 'Kategorie', 'Vorkommen des Tags "Ontology"')
