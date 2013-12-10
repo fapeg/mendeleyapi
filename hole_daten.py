@@ -1,14 +1,14 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 # encoding: utf-8
 
 from pprint import pprint
 from mendeley_client import *
-import os, sys, json
+import os, sys, json, time
 
 
 mendeley = create_client()
 
-
+'''
 
 # aufgabe 1: Wie verteilen sich die in Mendeley abgelegten Publikationen auf die letzten 10 Jahre?
 # (Dafür müssen nicht alle Publikationen heruntergeladen werden!)
@@ -38,7 +38,7 @@ with open("aufgabe2.json", "w") as json_output:
 print "\n ---------------------- \n"
 
 
-# aufgabe 3: Was sind die 10 populärsten Publikationen die in der Zeitschrift „Nature“ erschienen sind?
+# aufgabe 3: Was sind die 10 populärsten (viele leser) Publikationen die in der Zeitschrift „Nature“ erschienen sind?
 # das ist sehr schwierig. paper_stats gibt die 50 populärsten Zeitschriften aus,
 # allerdings ist da nur eine publikation aus Nature dabei.
 # wir könnten über search danach suchen, haben dann aber kein ranking nach popularität
@@ -61,7 +61,7 @@ pub_jahre = {}
 coAutoren = {}
 for publikation in response['documents']:
     # Aufgabenteil a
-    print str(publikation['year']) + ": " + publikation['title']
+    print str(publikation['year']) + ": " + publikation['title'].encode('utf-8')
     if publikation['year'] in pub_jahre:
         pub_jahre[publikation['year']]+=1
     else:
@@ -81,26 +81,40 @@ for publikation in response['documents']:
         json.dump(coAutoren, json_output)
     print "\n"
 print "\n ---------------------- \n"
-
+'''
 
 # aufgabe 5: Suche nach dem Tag „ontology“ und bestimme die Häufigkeit für jede Kategorie in Mendeley für das Jahr 2011.
 # erster schritt: liste mit allen kategorien holen:
 cat_response = mendeley.categories()
 print "Häufigket des Tags 'ontology' in Kategorien (2011, mehrmaliges Auftreten in einem Dok. noch nicht beachtet)\n"
 ontology_anzahl={}
+total_pages = 1
+page = 0
+print cat_response
+for eintrag in cat_response:
+    print eintrag
 for eintrag in cat_response: # jede kategorie durchgehen
-    response = mendeley.tagged('ontology', cat=eintrag['id'])
-    #im Jahr 2011:
-    for element in response['documents']:
-        if element['year']!=2011:
-            if eintrag['name'] in ontology_anzahl:
-                ontology_anzahl[eintrag['name']]+=1
-            else:
-                ontology_anzahl[eintrag['name']]=1
-#    print eintrag['name'] + " (ID " + str(eintrag['id']) + "): "
-#    print "    "+ str(response['total_results']) + " Ergebnisse\n" 
+    
+    while not page > total_pages-1: 
+        print page
+        response = mendeley.tagged('ontology',cat=eintrag['id'], items = 10,page=page)
+        print response['total_results']
+        total_pages = response['total_pages']
+        for dokument in response['documents']:
+            print dokument['title'].encode('utf-8') + " Jahr: " + str(dokument['year'])
+            if dokument['year'] == 2011:
+                if eintrag['name'] in ontology_anzahl:
+                    ontology_anzahl[eintrag['name']]+=1
+                else:
+                    ontology_anzahl[eintrag['name']]=1
+        page += 1
+    print "\n\n Eintrag: " + str(eintrag) + "\n\n"
+    page = 0
+
 with open("aufgabe5.json", "w") as json_output:
     json.dump(ontology_anzahl, json_output)
 pprint(ontology_anzahl)
 print "\n ---------------------- \n"
+
+
 
