@@ -86,29 +86,29 @@ print "\n ---------------------- \n"
 # aufgabe 5: Suche nach dem Tag „ontology“ und bestimme die Häufigkeit für jede Kategorie in Mendeley für das Jahr 2011.
 # erster schritt: liste mit allen kategorien holen:
 cat_response = mendeley.categories()
-print "Häufigket des Tags 'ontology' in Kategorien (2011, mehrmaliges Auftreten in einem Dok. noch nicht beachtet)\n"
+print "Häufigket des Tags 'ontology' in Kategorien \n"
 ontology_anzahl={}
 total_pages = 1
 page = 0
-print cat_response
-for eintrag in cat_response:
-    print eintrag
+#print cat_response
+#for eintrag in cat_response:
+#    print eintrag
 for eintrag in cat_response: # jede kategorie durchgehen
     
     while not page > total_pages-1: 
-        print page
+ #       print page
         response = mendeley.tagged('ontology',cat=eintrag['id'], items = 10,page=page)
-        print response['total_results']
+#        print response['total_results']
         total_pages = response['total_pages']
         for dokument in response['documents']:
-            print dokument['title'].encode('utf-8') + " Jahr: " + str(dokument['year'])
+#            print dokument['title'].encode('utf-8') + " Jahr: " + str(dokument['year'])
             if dokument['year'] == 2011:
                 if eintrag['name'] in ontology_anzahl:
                     ontology_anzahl[eintrag['name']]+=1
                 else:
                     ontology_anzahl[eintrag['name']]=1
         page += 1
-    print "\n\n Eintrag: " + str(eintrag) + "\n\n"
+ #   print "\n\n Eintrag: " + str(eintrag) + "\n\n"
     page = 0
 
 with open("aufgabe5.json", "w") as json_output:
