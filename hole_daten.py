@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # encoding: utf-8
 
 from pprint import pprint
@@ -8,7 +8,7 @@ import os, sys, json, time
 
 mendeley = create_client()
 
-'''
+
 
 # aufgabe 1: Wie verteilen sich die in Mendeley abgelegten Publikationen auf die letzten 10 Jahre?
 # (Dafür müssen nicht alle Publikationen heruntergeladen werden!)
@@ -81,39 +81,30 @@ for publikation in response['documents']:
         json.dump(coAutoren, json_output)
     print "\n"
 print "\n ---------------------- \n"
-'''
+
 
 # aufgabe 5: Suche nach dem Tag „ontology“ und bestimme die Häufigkeit für jede Kategorie in Mendeley für das Jahr 2011.
 # erster schritt: liste mit allen kategorien holen:
 cat_response = mendeley.categories()
-print "Häufigket des Tags 'ontology' in Kategorien \n"
 ontology_anzahl={}
-total_pages = 1
-page = 0
-#print cat_response
-#for eintrag in cat_response:
-#    print eintrag
 for eintrag in cat_response: # jede kategorie durchgehen
-    
     while not page > total_pages-1: 
- #       print page
         response = mendeley.tagged('ontology',cat=eintrag['id'], items = 10,page=page)
-#        print response['total_results']
         total_pages = response['total_pages']
         for dokument in response['documents']:
-#            print dokument['title'].encode('utf-8') + " Jahr: " + str(dokument['year'])
             if dokument['year'] == 2011:
                 if eintrag['name'] in ontology_anzahl:
                     ontology_anzahl[eintrag['name']]+=1
                 else:
                     ontology_anzahl[eintrag['name']]=1
+        
         page += 1
- #   print "\n\n Eintrag: " + str(eintrag) + "\n\n"
-    page = 0
+#        time.sleep(1200)
+    page=0
+#    time.sleep(1800) 
 
 with open("aufgabe5.json", "w") as json_output:
     json.dump(ontology_anzahl, json_output)
-pprint(ontology_anzahl)
 print "\n ---------------------- \n"
 
 
