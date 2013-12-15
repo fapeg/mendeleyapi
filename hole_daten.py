@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# encoding: utf-8
+# -*- coding: utf-8 -*- 
 
 from pprint import pprint
 from mendeley_client import *
@@ -32,13 +32,24 @@ with open("aufgabe2.json", "w") as json_output:
 
 
 # aufgabe 3: Was sind die 10 populärsten (viele leser) Publikationen die in der Zeitschrift „Nature“ erschienen sind?
-# das ist sehr schwierig. paper_stats gibt die 50 populärsten Zeitschriften aus,
-# allerdings ist da nur eine publikation aus Nature dabei.
-# wir könnten über search danach suchen, haben dann aber kein ranking nach popularität
-response = mendeley.search('published_in:Nature', items=100)
-print "Top 10 Publikationen in Zeitschrift 'Nature'\n"
-#pprint(response)
-print "anfrage muss noch verbessert werden"
+# code sollte theoretisch funktionieren, wenn es mit der api klappen würde
+# wir haben aber über 200 seiten die durchlaufen werden müssen, also auch mit sleep zu viel...
+total_pages = 1
+page = 0
+nature_readers = {}
+while not page > total_pages-1: 
+    response = mendeley.search('published_in:Nature', items=500, page=page)
+    total_pages = response['total_pages']
+    for element in response['documents']:
+        response_details = mendeley.details(element['uuid'])
+        status = response_details['stats']
+        readers = status['readers']
+        nature_readers[response_details['title']]=readers
+    page += 1
+top10_nature = dict(sorted(nature_readers.items(), key=lambda x:x[1])[-10:])
+with open("aufgabe3.json", "w") as json_output:
+    json.dump(top10_nature0, json_output)
+
 
 
 # aufgabe 4: Auflistung aller Publikationen von Prof. Wolfgang G. Stock
@@ -72,10 +83,10 @@ for publikation in response['documents']:
 
 # aufgabe 5: Suche nach dem Tag „ontology“ und bestimme die Häufigkeit für jede Kategorie in Mendeley für das Jahr 2011.
 # erster schritt: liste mit allen kategorien holen:
-total_pages = 1
-page = 0
 cat_response = mendeley.categories()
 ontology_anzahl={}
+total_pages = 1
+page = 0
 for eintrag in cat_response: # jede kategorie durchgehen
     while not page > total_pages-1: 
         response = mendeley.tagged('ontology',cat=eintrag['id'], items = 10,page=page)
