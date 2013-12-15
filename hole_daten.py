@@ -94,7 +94,7 @@ for eintrag in cat_response: # jede kategorie durchgehen
 
 with open("aufgabe5.json", "w") as json_output:
     json.dump(ontology_anzahl, json_output)
-print "\n ---------------------- \n"
+
 
 
 
