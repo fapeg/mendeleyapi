@@ -11,7 +11,11 @@ mendeley = create_client()
 
 
 # aufgabe 1: Wie verteilen sich die in Mendeley abgelegten Publikationen auf die letzten 10 Jahre?
+<<<<<<< HEAD
 # (Dafür müssen nicht alle Publikationen heruntergeladen werden!)
+=======
+# (Dafür müssen nicht alle Publikationen heruntergeladen werden!)
+>>>>>>> 780ec0119a33586a1f64b65aafad1f8fd678579a
 publikationen10 = {}
 for jahr in range(2003,2013): # letzte zehn jahre: von 2003 bis 2012 (trotzdem in range 2013 angeben)
     response = mendeley.search('year:'+str(jahr))
@@ -31,7 +35,11 @@ with open("aufgabe2.json", "w") as json_output:
     json.dump(top20, json_output)
 
 
+<<<<<<< HEAD
 # aufgabe 3: Was sind die 10 populärsten (viele leser) Publikationen die in der Zeitschrift „Nature“ erschienen sind?
+=======
+# aufgabe 3: Was sind die 10 populärsten (viele leser) Publikationen die in der Zeitschrift „Nature“ erschienen sind?
+>>>>>>> 780ec0119a33586a1f64b65aafad1f8fd678579a
 # code sollte theoretisch funktionieren, wenn es mit der api klappen würde
 # wir haben aber über 200 seiten die durchlaufen werden müssen, also auch mit sleep zu viel...
 total_pages = 1
@@ -78,6 +86,11 @@ for publikation in response['documents']:
                 coAutoren[autor['surname']]=1
     with open("aufgabe4b.json", "w") as json_output:
         json.dump(coAutoren, json_output)
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 780ec0119a33586a1f64b65aafad1f8fd678579a
 
 
 
