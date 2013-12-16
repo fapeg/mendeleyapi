@@ -1,0 +1,236 @@
+Concepts and semantic relations in information science
+[{u'surname': u'Stock', u'forename': u'Wolfgang G.'}]
+-------------
+11
+0
+Intellectual property information: A comparative analysis of main information providers
+[{u'surname': u'Stock', u'forename': u'Mechtild'}, {u'surname': u'Stock', u'forename': u'Wolfgang G.'}]
+-------------
+11
+0
+Informational cities: Analysis and construction of cities in the knowledge society
+[{u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+0
+Folksonomies and science communication
+[{u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+0
+Folksonomy and information retrieval
+[{u'surname': u'Peters', u'forename': u'Isabella'}, {u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+0
+Information Retrieval: Informationen suchen und finden
+[{u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+0
+Collective Indexing of Emotions in Images . A Study in Emotional Information Retrieval
+[{u'surname': u'Schmidt', u'forename': u'Stefanie'}, {u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+0
+“Power tags” in information retrieval
+[{u'surname': u'Peters', u'forename': u'Isabella'}, {u'surname': u'Stock', u'forename': u'Wolfgang G.'}]
+-------------
+11
+0
+The inflation of impact factors of scientific journals.
+[{u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+0
+Folksonomies in Wissensrepräsentation und Information Retrieval
+[{u'surname': u'Peters', u'forename': u'Isabella'}, {u'surname': u'Peters', u'forename': u'Isabella'}, {u'surname': u'Stock', u'forename': u'Wolfgang G'}, {u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+0
+Folksonomies in Wissensrepräsentation und Information Retrieval
+[{u'surname': u'Peters', u'forename': u'Isabella'}, {u'surname': u'Peters', u'forename': u'Isabella'}, {u'surname': u'Stock', u'forename': u'Wolfgang G'}, {u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+0
+On relevance distributions
+[{u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+0
+Impact and relevance of LIS journals: A scientometric analysis of international and German-language LIS journals - Citation analysis versus reader survey
+[{u'surname': u'Schloegl', u'forename': u'Christian'}, {u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+0
+Practitioners and academics as authors and readers: the case of LIS journals
+[{u'surname': u'Schl\xf6gl', u'forename': u'Christian'}, {u'surname': u'Stock', u'forename': u'Wolfgang G.'}]
+-------------
+11
+0
+Construction and Evaluation of a Blended Learning Platform for Higher Education
+[{u'surname': u'Beutelspacher', u'forename': u'Lisa'}, {u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+0
+MEMOSE – Search Engine for Emotions in Multimedia Documents
+[{u'surname': u'Knautz', u'forename': u'Kathrin'}, {u'surname': u'Siebenlist', u'forename': u'Tobias'}, {u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+0
+Gender-specific information search behavior
+[{u'surname': u'Maghferat', u'forename': u'Parinaz'}, {u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+0
+Informationelle Städte im 21. Jahrhundert
+[{u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+0
+Publikation und Zitat: die problematische Basis empirischer Wissenschaftsforschung
+[{u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+0
+0
+Deutsche Zeitschriften des Bibliotheks- und Informationswesens. Leser, Zitate und Redaktionen in szientometrischer Analyse
+[{u'surname': u'Schloegl', u'forename': u'Christian'}, {u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+1
+Die Bedeutung der Zitatenanalyse für die Wissenschaftsforschung
+[{u'surname': u'Stock', u'forename': u'Wolfgang G.'}]
+-------------
+11
+1
+Die Entstehung einer wissenschaftlichen Disziplin
+[{u'surname': u'Stock', u'forename': u'Wolfgang G.'}]
+-------------
+11
+1
+Testing Collaborative Filtering against Co-Citation Analysis and Bibliographic Coupling for Academic Author Recommendation
+[{u'surname': u'Heck', u'forename': u'Tamara'}, {u'surname': u'Peters', u'forename': u'Isabella'}, {u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+1
+Informationsmarkt. Informationen im I-Commerce anbieten und nachfragen
+[{u'surname': u'Linde', u'forename': u'Frank'}, {u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+1
+1
+Incentives for Emotional Multimedia Tagging
+[{u'surname': u'Knautz', u'forename': u'Kathrin'}, {u'surname': u'Guschauski', u'forename': u'Daniel'}, {u'surname': u'Miskovic', u'forename': u'Daniel'}, {u'surname': u'Siebenlist', u'forename': u'Tobias'}, {u'surname': u'Terliesner', u'forename': u'Jens'}, {u'surname': u'Stock', u'forename': u'Wolfgang G.'}]
+-------------
+11
+2
+Dimensions of Informational City Research
+[{u'surname': u'Mainka', u'forename': u'Agnes'}, {u'surname': u'Khveshchanka', u'forename': u'Sviatlana'}, {u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+2
+Expert Recommendation for Knowledge Management in Academia
+[{u'surname': u'Heck', u'forename': u'Tamara'}, {u'surname': u'Hanraths', u'forename': u'Oliver'}, {u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+2
+Dimensionen der Zeitschriftenszientometrie am Beispiel von "Buch und Bibliothek"
+[{u'surname': u'Juchem', u'forename': u'Kerstin'}, {u'surname': u'Schloegl', u'forename': u'Christian'}, {u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+2
+Georg Klaus �ber Kybernetik und Information
+[{u'surname': u'Stock', u'forename': u'Wolfgang G.'}]
+-------------
+11
+2
+Finding Emotional-Laden Resources on the World Wide Web
+[{u'surname': u'Knautz', u'forename': u'Kathrin'}, {u'surname': u'Rasmussen Neal', u'forename': u'Diane'}, {u'surname': u'Schmidt', u'forename': u'Stefanie'}, {u'surname': u'Siebenlist', u'forename': u'Tobias'}, {u'surname': u'Stock', u'forename': u'Wolfgang G.'}]
+-------------
+11
+2
+2
+Retrieval effectiveness of tagging systems
+[{u'surname': u'Peters', u'forename': u'Isabella'}, {u'surname': u'Schumann', u'forename': u'Laura'}, {u'surname': u'Terliesner', u'forename': u'Jens'}, {u'surname': u'Stock', u'forename': u'Wolfgang G.'}]
+-------------
+11
+3
+Online-Hosts für Wissenschaft, Technik und \nMedizin auf dem deutschen Informationsmarkt.
+[{u'surname': u'Stock', u'forename': u'Wolfgang G.'}, {u'surname': u'Stock', u'forename': u'Wolfgang G.'}, {u'surname': u'Stock', u'forename': u'Mechthild'}, {u'surname': u'Stock', u'forename': u'Mechthild'}]
+-------------
+11
+3
+Online-Hosts für Wissenschaft, Technik und \nMedizin auf dem deutschen Informationsmarkt.
+[{u'surname': u'Stock', u'forename': u'Wolfgang G.'}, {u'surname': u'Stock', u'forename': u'Wolfgang G.'}, {u'surname': u'Stock', u'forename': u'Mechthild'}, {u'surname': u'Stock', u'forename': u'Mechthild'}]
+-------------
+11
+3
+Politische Kommunikation, Massenmedien und Agenda Setting: Wie Meinungen und Mehrheiten entstehen
+[{u'surname': u'Stock', u'forename': u'Wolfgang'}]
+-------------
+11
+3
+Intellectual property information. A case study of Questel-Orbit
+[{u'surname': u'Stock', u'forename': u'Mechtild'}, {u'surname': u'Stock', u'forename': u'Mechtild'}, {u'surname': u'Stock', u'forename': u'Wolfgang'}, {u'surname': u'Stock', u'forename': u'Wolfgang'}]
+-------------
+11
+3
+Intellectual property information. A case study of Questel-Orbit
+[{u'surname': u'Stock', u'forename': u'Mechtild'}, {u'surname': u'Stock', u'forename': u'Mechtild'}, {u'surname': u'Stock', u'forename': u'Wolfgang'}, {u'surname': u'Stock', u'forename': u'Wolfgang'}]
+-------------
+11
+3
+Intellectual property information. A case study of Questel-Orbit
+[{u'surname': u'Stock', u'forename': u'Mechtild'}, {u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+3
+3
+Dimensions of the scientometrics of journals: "Buch und Bibliothek" as a concrete example
+[{u'surname': u'Juchem', u'forename': u'Kerstin'}, {u'surname': u'Schlogl', u'forename': u'Christian'}, {u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+4
+Die Bedeutung Ludwig Flecks Fur Die Theorie Der Wissenschaftsgeschichte
+[{u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+4
+Die Genese der Theorie der Vorstellungsproduktion der Grazer Schule
+[{u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+4
+Die Bedeutung der Theorie der Vorstellungsproduktion der Grazer Schule fur die kognitive Wissenschaft
+[{u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+4
+Evidenzbasierte Bibliotheks- und Informationspraxis : EBLIP5, Stockholm, 2009
+[{u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+4
+Datenbank "Grazer Schule"
+[{u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+4
+4
+5
+Folksonomy The Collaborative Knowledge Organization System
+[{u'surname': u'Weller', u'forename': u'Katrin'}, {u'surname': u'Peters', u'forename': u'Isabella'}, {u'surname': u'Stock', u'forename': u'Wolfgang G'}]
+-------------
+11
+6
+6
+7
+8
+Prognostic value of cyclin B1 protein expression in colorectal cancer.
+[{u'surname': u'Grabsch', u'forename': u'Heike'}, {u'surname': u'Lickvers', u'forename': u'Kristina'}, {u'surname': u'Hansen', u'forename': u'Olaf'}, {u'surname': u'Takeno', u'forename': u'Shinsuke'}, {u'surname': u'Willers', u'forename': u'Reinhart'}, {u'surname': u'Stock', u'forename': u'Wolfgang'}, {u'surname': u'Gabbert', u'forename': u'Helmut E'}, {u'surname': u'Mueller', u'forename': u'Wolfram'}]
+-------------
+11
+9
+9
+10
