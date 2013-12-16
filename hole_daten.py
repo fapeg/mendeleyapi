@@ -8,7 +8,7 @@ import os, sys, json, time
 
 mendeley = create_client()
 
-'''
+
 
 # aufgabe 1: Wie verteilen sich die in Mendeley abgelegten Publikationen auf die letzten 10 Jahre?
 # (Dafür müssen nicht alle Publikationen heruntergeladen werden!)
@@ -58,7 +58,7 @@ top10_nature = dict(sorted(nature_readers.items(), key=lambda x:x[1])[-10:])
 with open("aufgabe3.json", "w") as json_output:
     json.dump(top10_nature0, json_output)
 
-'''
+
 
 # aufgabe 4: Auflistung aller Publikationen von Prof. Wolfgang G. Stock
 # (Extrahiere diese Daten automatisch mit Hilfe von Python!)
@@ -76,7 +76,7 @@ while not page > total_pages-1:
     response = mendeley.search('author:Stock', items=500, page=page)
     total_pages = response['total_pages']
     for publikation in response['documents']:
-        
+        print publikation['authors']
         #Aufgabenteil b
         for autor in publikation['authors']:
             if (autor['forename']=="Wolfgang G." or autor['forename']=="Wolfgang G" or autor['forename']=="Wolfgang") and autor['surname']=="Stock":
@@ -105,7 +105,7 @@ with open("aufgabe4a.json", "w") as json_output:
     json.dump(pub_jahre, json_output)
 
 
-'''
+
 # aufgabe 5: Suche nach dem Tag „ontology“ und bestimme die Häufigkeit für jede Kategorie in Mendeley für das Jahr 2011.
 # erster schritt: liste mit allen kategorien holen:
 cat_response = mendeley.categories()
@@ -130,7 +130,4 @@ for eintrag in cat_response: # jede kategorie durchgehen
 
 with open("aufgabe5.json", "w") as json_output:
     json.dump(ontology_anzahl, json_output)
-
-
-'''
 
