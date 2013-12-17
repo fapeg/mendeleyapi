@@ -7,7 +7,7 @@ import os, sys, json, time
 
 
 mendeley = create_client()
-
+'''
 
 
 # aufgabe 1: Wie verteilen sich die in Mendeley abgelegten Publikationen auf die letzten 10 Jahre?
@@ -66,17 +66,18 @@ with open("aufgabe3.json", "w") as json_output:
 #      -Erstelle ein Ranking aller Co-Autoren mit denen Prof. Stock
 #       zusammengearbeitet hat nach Anzahl der in Mendeley vorhandenen,
 #       gemeinsamen Publikationen.
-
+'''
 pub_jahre = {}
-coAutoren = {}
+coautoren_dict = {}
 total_pages = 1
 page = 0
 nature_readers = {}
+coautoren_list = []
 while not page > total_pages-1: 
     response = mendeley.search('author:Stock', items=500, page=page)
     total_pages = response['total_pages']
     for publikation in response['documents']:
-        print publikation['authors']
+        #print publikation['authors']
         #Aufgabenteil b
         for autor in publikation['authors']:
             if (autor['forename']=="Wolfgang G." or autor['forename']=="Wolfgang G" or autor['forename']=="Wolfgang") and autor['surname']=="Stock":
@@ -90,20 +91,40 @@ while not page > total_pages-1:
                     pub_jahre[publikation['year']]+=1
                 else:
                     pub_jahre[publikation['year']]=1   
+                coautoren_list.append(publikation['authors'])
                 
+                '''
                 if (autor['forename']!="Wolfgang G." or autor['forename']!="Wolfgang G" or autor['forename']!="Wolfgang") and autor['surname']!="Stock":
                     if autor['surname'] in coAutoren:
                         coAutoren[autor['surname']]+=1
                     else:
                         coAutoren[autor['surname']]=1
+    
+    
+                '''
+        
     print page
     page = page + 1
     time.sleep(2)
+    
+for eintrag in coautoren_list:
+    for autor in eintrag:
+        if (autor['forename']!="Wolfgang G." or autor['forename']!="Wolfgang G") and autor['surname']!="Stock":
+            if autor['surname'] in coautoren_dict:
+                coautoren_dict[autor['surname']]+=1
+            else:
+                coautoren_dict[autor['surname']]=1
+try:
+    coautoren_dict[u'Schl\xf6gl'] = coautoren_dict[u'Schl\xf6gl'] + coautoren_dict['Schlogl'] + coautoren_dict[u'Schloegl'] # verschiedene schlögls vereinheitlichen
+    del coautoren_dict['Schlogl']
+    del coautoren_dict['Schloegl']
+except KeyError:
+    pass
+
 with open("aufgabe4b.json", "w") as json_output:
-    json.dump(coAutoren, json_output)
+    json.dump(coautoren_dict, json_output)
 with open("aufgabe4a.json", "w") as json_output:
     json.dump(pub_jahre, json_output)
-
 
 
 # aufgabe 5: Suche nach dem Tag „ontology“ und bestimme die Häufigkeit für jede Kategorie in Mendeley für das Jahr 2011.
